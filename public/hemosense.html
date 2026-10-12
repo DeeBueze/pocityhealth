@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HemoSense | Point-of-care blood typing by PO-City</title>
+  <meta name="description" content="HemoSense is a point-of-care blood typing prototype from PO-City. It uses impedance sensing on low-cost graphite electrodes to show the ABO and Rh group on screen.">
+  <link rel="canonical" href="https://luminous-conkies-f6d078.netlify.app/hemosense">
+  <meta name="theme-color" content="#f6f4f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1518" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="PO-City">
+  <meta property="og:title" content="HemoSense | Point-of-care blood typing by PO-City">
+  <meta property="og:description" content="A drop of blood, three test channels and a result on screen. A research prototype built in Lagos.">
+  <meta property="og:url" content="https://luminous-conkies-f6d078.netlify.app/hemosense">
+  <meta property="og:locale" content="en_NG">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/content.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main">
+      <a class="logo" href="/">PO<span class="logo-dash">-</span>City</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/hemosense" aria-current="page">HemoSense</a></li>
+        <li><a href="/#team">Team</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero product-hero wrap" aria-labelledby="hero-title">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">PO-City</a></li>
+          <li><span aria-current="page">HemoSense</span></li>
+        </ol>
+      </nav>
+      <div class="hero-grid">
+        <div>
+          <span class="tag">Prototype</span>
+          <h1 id="hero-title" style="margin-top:0.4em">HemoSense</h1>
+          <p class="lede">Blood typing at the point of care. A drop of blood, three test channels and a result on screen, using impedance sensing on low-cost graphite electrodes.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#demo">Try the demo <span class="arrow" aria-hidden="true">&darr;</span></a>
+            <a class="btn btn-secondary" href="#specs">See the specs</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <!-- PHOTO: replace the <div class="ph"> below with
+               <img src="/images/hemosense-hero.jpg" alt="The HemoSense prototype with its OLED display" width="1200" height="900"> -->
+          <figure class="media">
+            <div class="ph" role="img" aria-label="Photo placeholder: HemoSense prototype, hero shot"><span>Photo placeholder: HemoSense prototype, hero shot</span></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="how-title">How it works</h2>
+          <p>Blood typing depends on agglutination: red cells clump when they meet the matching antibody. HemoSense detects that clumping electrically instead of by eye.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3><span class="visually-hidden">Step 1: </span>Add the sample</h3>
+            <p>A drop of blood goes onto three channels: Anti-A, Anti-B and Anti-D.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3><span class="visually-hidden">Step 2: </span>Cells react</h3>
+            <p>Where an antigen matches its antibody, the red cells agglutinate on the electrodes.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3><span class="visually-hidden">Step 3: </span>Impedance is read</h3>
+            <p>The microcontroller measures each channel and compares it with the agglutination threshold.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <h3><span class="visually-hidden">Step 4: </span>Group is shown</h3>
+            <p>The three outcomes combine into an ABO and Rh result on the OLED screen.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== INTERACTIVE DEMO ===================== -->
+    <section class="section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="demo-title">See the typing logic</h2>
+          <p>Pick a blood group to see how each of the three channels would respond.</p>
+        </div>
+
+        <div class="demo">
+          <span class="demo-label" id="picker-label">Sample blood group</span>
+          <div class="group-picker" role="group" aria-labelledby="picker-label">
+            <button type="button" class="group-btn" data-group="A+" aria-pressed="false">A+</button>
+            <button type="button" class="group-btn" data-group="A-" aria-pressed="false">A&minus;</button>
+            <button type="button" class="group-btn" data-group="B+" aria-pressed="false">B+</button>
+            <button type="button" class="group-btn" data-group="B-" aria-pressed="false">B&minus;</button>
+            <button type="button" class="group-btn" data-group="AB+" aria-pressed="false">AB+</button>
+            <button type="button" class="group-btn" data-group="AB-" aria-pressed="false">AB&minus;</button>
+            <button type="button" class="group-btn" data-group="O+" aria-pressed="false">O+</button>
+            <button type="button" class="group-btn" data-group="O-" aria-pressed="false">O&minus;</button>
+          </div>
+
+          <div aria-live="polite">
+            <div class="wells">
+              <figure class="well" data-channel="A">
+                <span class="well-name">Anti-A</span>
+                <svg class="well-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"></svg>
+                <figcaption class="well-status"><span class="visually-hidden">Anti-A: </span><span data-status>Clear</span></figcaption>
+              </figure>
+              <figure class="well" data-channel="B">
+                <span class="well-name">Anti-B</span>
+                <svg class="well-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"></svg>
+                <figcaption class="well-status"><span class="visually-hidden">Anti-B: </span><span data-status>Clear</span></figcaption>
+              </figure>
+              <figure class="well" data-channel="D">
+                <span class="well-name">Anti-D</span>
+                <svg class="well-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"></svg>
+                <figcaption class="well-status"><span class="visually-hidden">Anti-D: </span><span data-status>Clear</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="demo-result">
+              <span class="result-label">Result on screen</span>
+              <span class="result-value" id="result-value">&nbsp;</span>
+              <p class="result-detail" id="result-detail">Select a blood group above.</p>
+            </div>
+          </div>
+
+          <p class="demo-note">Illustration of the logic, not live device data. A channel is flagged when its impedance crosses the 25 kOhm agglutination threshold.</p>
+          <noscript><p>Turn on JavaScript to use the demo.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY =====================
+         PHOTOS: replace each <div class="ph"> with an <img>, for example
+         <img src="/images/gallery-1.jpg" alt="Describe the photo" loading="lazy" width="1200" height="900"> -->
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="gallery-title">Gallery</h2>
+          <p>Build photos, test runs and prototype close-ups will go here.</p>
+        </div>
+        <div class="gallery">
+          <figure class="media">
+            <div class="ph" role="img" aria-label="Photo placeholder: HemoSense build on the bench"><span>Photo placeholder: build on the bench</span></div>
+          </figure>
+          <figure class="media">
+            <div class="ph" role="img" aria-label="Photo placeholder: a test run"><span>Photo placeholder: test run</span></div>
+          </figure>
+          <figure class="media">
+            <div class="ph" role="img" aria-label="Photo placeholder: graphite electrode close-up"><span>Photo placeholder: electrode close-up</span></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TECHNOLOGY AND SPECS =====================
+         EDIT: to change a spec, edit the <dt> (label) and <dd> (value) pair. -->
+    <section class="section" id="specs" aria-labelledby="specs-title">
+      <div class="wrap tech">
+        <div class="section-head">
+          <h2 id="specs-title">Technology</h2>
+          <p>The electrodes are drawn in pencil graphite, a method supported by published research on graphite sensors for blood typing. The electronics use common, locally available parts.</p>
+        </div>
+        <dl class="specs">
+          <div class="spec"><dt>Sensing method</dt><dd>Electrochemical impedance spectroscopy</dd></div>
+          <div class="spec"><dt>Electrodes</dt><dd>Pencil graphite</dd></div>
+          <div class="spec"><dt>Controller</dt><dd>ESP32-S3</dd></div>
+          <div class="spec"><dt>Agglutination threshold</dt><dd>25 kOhm</dd></div>
+          <div class="spec"><dt>Display</dt><dd>OLED</dd></div>
+          <div class="spec"><dt>Bill of materials</dt><dd>Priced from Lagos suppliers</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ =====================
+         EDIT: to add a question, copy one <details> block. -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="faq-title">Questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is HemoSense ready for clinical use?</summary>
+            <p>No. It is a research prototype and has not been approved for clinical use.</p>
+          </details>
+          <details>
+            <summary>What does it test for?</summary>
+            <p>ABO and Rh blood group, using three channels: Anti-A, Anti-B and Anti-D.</p>
+          </details>
+          <details>
+            <summary>Why graphite electrodes?</summary>
+            <p>They are cheap, easy to produce and supported by published research, which keeps the cost of each test low.</p>
+          </details>
+          <details>
+            <summary>Can we pilot it or partner with you?</summary>
+            <p>Yes, we would like that. Use the contact link below.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CLOSING CTA =====================
+         EDIT: the email address lives in /js/content.js -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap contact">
+        <div>
+          <h2 id="cta-title">Interested in HemoSense?</h2>
+          <p class="lede">Talk to us about pilots, partnerships and funding.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:[EMAIL]" data-email-link>Email PO-City <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">PO-City, Lagos, Nigeria</p>
+      <p>HemoSense is a research prototype. Not approved for clinical use.</p>
+    </div>
+  </footer>
+</body>
+</html>

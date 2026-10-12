@@ -1,0 +1,18 @@
+# Static site: no build step. Netlify serves the files in /public as they are.
+# Pretty URLs (on by default) serve public/hemosense.html at /hemosense.
+
+[build]
+  publish = "public"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+
+# Ask browsers to download CVs rather than open them in a tab.
+[[headers]]
+  for = "/cvs/*.pdf"
+  [headers.values]
+    Content-Disposition = "attachment"
